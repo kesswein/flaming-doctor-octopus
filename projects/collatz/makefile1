@@ -6,9 +6,6 @@ Collatz.html: Collatz.py
 Collatz.log:
 	git log > Collatz.log
 
-RunCollatz.out: RunCollatz.py RunCollatz.in
-	RunCollatz.py < RunCollatz.in > RunCollatz.out
-
 RunCollatz.tmp: RunCollatz.py RunCollatz.in
 	RunCollatz.py < RunCollatz.in > RunCollatz.tmp
 	diff RunCollatz.tmp RunCollatz.out
