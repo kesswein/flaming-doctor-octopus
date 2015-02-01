@@ -26,7 +26,7 @@ class MyUnitTests (TestCase) :
 
 main()
 
-"""
+""" #pragma: no cover
 % coverage3 help
 Coverage.py, version 3.7.1
 Measure, collect, and report on code coverage in Python programs.
@@ -126,5 +126,5 @@ OK
 % coverage3 report -m
 Name        Stmts   Miss Branch BrMiss  Cover   Missing
 -------------------------------------------------------
-Coverage1      16      5      4      3    60%   15-19, 29
+Coverage1      15      4      4      3    63%   15-19
 """

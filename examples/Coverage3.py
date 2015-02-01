@@ -32,7 +32,7 @@ class MyUnitTests (TestCase) :
 
 main()
 
-"""
+""" #pragma: no cover
 % Coverage3.py
 ...
 ----------------------------------------------------------------------
@@ -54,5 +54,5 @@ OK
 % coverage3 report -m
 Name        Stmts   Miss Branch BrMiss  Cover   Missing
 -------------------------------------------------------
-Coverage3      20      1      4      0    96%   35
+Coverage3      19      0      4      0   100%
 """
