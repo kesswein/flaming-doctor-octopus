@@ -18,53 +18,47 @@ def is_prime (n) :
 
 class MyUnitTests (TestCase) :
     def test_1 (self) :
-        self.assertFalse(is_prime( 1))
+        self.assertFalse(is_prime(1))
 
     def test_2 (self) :
-        self.assertFalse(is_prime( 2))
+        self.assertFalse(is_prime(2))
 
     def test_3 (self) :
-        self.assertTrue (is_prime( 3))
+        self.assertTrue(is_prime(3))
 
     def test_4 (self) :
-        self.assertFalse(is_prime( 4))
+        self.assertFalse(is_prime(4))
 
     def test_5 (self) :
-        self.assertTrue (is_prime( 5))
+        self.assertTrue(is_prime(5))
 
     def test_6 (self) :
-        self.assertFalse(is_prime( 6))
+        self.assertTrue(is_prime(7))
 
     def test_7 (self) :
-        self.assertTrue (is_prime( 7))
+        self.assertTrue(is_prime(9))
 
     def test_8 (self) :
-        self.assertFalse(is_prime( 8))
+        self.assertFalse(is_prime(27))
 
     def test_9 (self) :
-        self.assertTrue (is_prime( 9))
-
-    def test_10 (self) :
-        self.assertFalse(is_prime(10))
-
-    def test_11 (self) :
-        self.assertTrue (is_prime(11))
+        self.assertTrue(is_prime(29))
 
 if __name__ == "__main__" :
     main()
 
 """ #pragma: no cover
-% coverage3 run --branch IsPrime.py
-...........
+coverage3 run --branch IsPrime.py
+.........
 ----------------------------------------------------------------------
-Ran 11 tests in 0.000s
+Ran 9 tests in 0.000s
 
 OK
 
 
 
-% coverage3 report -m
-Name      Stmts   Miss Branch BrMiss  Cover
--------------------------------------------
-is_prime     23      0      6      0   100%
+coverage3 report -m
+Name      Stmts   Miss Branch BrMiss  Cover   Missing
+-----------------------------------------------------
+IsPrime      31      0      6      0   100%
 """
