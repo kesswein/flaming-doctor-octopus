@@ -4,7 +4,7 @@
 # Factorial.py
 # ------------
 
-from unittest  import main, TestCase
+from unittest import main, TestCase
 
 def factorial (n) :
     ...
