@@ -7,10 +7,7 @@
 from unittest  import main, TestCase
 
 def factorial_recursion (n) :
-    assert n >= 0
-    if n < 2 :
-        return 1
-    return n * factorial_recursion(n - 1)
+    ...
 
 class MyUnitTests (TestCase) :
     def test_0 (self) :
