@@ -29,8 +29,20 @@ def collatz_eval (i, j) :
     j the end       of the range, inclusive
     return the max cycle length of the range [i, j]
     """
-    # <your code>
-    return 1
+    greatest = 1
+    for x in range (i, j+1):
+        k = x
+        count = 1
+        while k != 1:
+            if k%2 == 0:
+                k /= 2
+            else:
+                k *= 3
+                k += 1
+            count += 1
+        if count > greatest:
+            greatest = count
+    return greatest
 
 # -------------
 # collatz_print
@@ -55,7 +67,9 @@ def collatz_solve (r, w) :
     r a reader
     w a writer
     """
+
     for s in r :
         i, j = collatz_read(s)
         v    = collatz_eval(i, j)
         collatz_print(w, i, j, v)
+
