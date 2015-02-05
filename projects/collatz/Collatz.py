@@ -29,6 +29,10 @@ def collatz_eval (i, j) :
     j the end       of the range, inclusive
     return the max cycle length of the range [i, j]
     """
+    if i > j:
+        temp = i
+        i = j
+        j = temp
     greatest = 1
     for x in range (i, j+1):
         k = x
