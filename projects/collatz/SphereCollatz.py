@@ -28,9 +28,43 @@ def collatz_read (s) :
     a = s.split()
     return [int(a[0]), int(a[1])]
 
-# ------------
-# collatz_eval
-# ------------
+def collatz_read (s) :
+    """
+    read two ints
+    s a string
+    return a list of two ints, representing the beginning and end of a range, [i, j]
+    """
+    a = s.split()
+    return [int(a[0]), int(a[1])]
+
+cache = [0 for i in range(1,2000000)]
+
+def calc_collatz (i):
+    """
+    calculate cycle length of i
+    """
+    global cache
+    temp = [0 for i in range(1,550)] #used to fill in cache later
+    count = 1
+    if cache[i] != 0:
+        return cache[i]
+    else:
+        while i != 1:
+            if i%2 == 0:
+                i //= 2
+            else:
+                i *= 3
+                i += 1
+            if i <= 1000000:
+                if cache[i] == 0:
+                    temp[count] = i
+                else:
+                    for x in range (1, count):
+                        cache[temp[x]] = count - x
+                    cache[i] = count
+                    return count
+            count += 1
+    return count
 
 def collatz_eval (i, j) :
     """
@@ -42,19 +76,13 @@ def collatz_eval (i, j) :
         temp = i
         i = j
         j = temp
+    if i < j//2+1:
+        i = j//2+1
     greatest = 1
     for x in range (i, j+1):
-        k = x
-        count = 1
-        while k != 1:
-            if k%2 == 0:
-                k /= 2
-            else:
-                k *= 3
-                k += 1
-            count += 1
-        if count > greatest:
-            greatest = count
+        cycl_len = calc_collatz(x)
+        if cycl_len > greatest:
+            greatest = cycl_len
     return greatest
 
 # -------------
